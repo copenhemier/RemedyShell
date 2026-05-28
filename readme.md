@@ -1,0 +1,22 @@
+# MyShell
+
+My own shell. WIP.
+
+## What it does so far
+
+Basic REPL. Prompt shows current directory. Runs external commands. A few built-ins: `cd`, `pwd`, `history`, `clear`, `help`, `exit`. Up/down arrows for history. Handles quoted args so `echo "hi there"` works.
+
+## Running it
+
+Open `MyShell.csproj` in Visual Studio, hit Ctrl+F5. Needs .NET 8 SDK.
+
+## TODO
+
+- tab completion (path completion first, then commands)
+- own `ls` with colors
+- env var expansion (`$HOME`, `%USERPROFILE%`)
+- pipes (`|`)
+- redirection (`>`, `>>`, `<`)
+- aliases
+- persistent history across sessions
+- maybe: structured pipelines like nushell/PowerShell — pipe objects not text
