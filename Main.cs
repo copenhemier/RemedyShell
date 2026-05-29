@@ -1,9 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Security.AccessControl;
 
 namespace RemedyShellv1
 {
@@ -203,6 +202,11 @@ namespace RemedyShellv1
                     Console.WriteLine(Directory.GetCurrentDirectory());
                     return true;
 
+                case "ls":
+                case "dir":
+                    Ls.Run(args);
+                    return true;
+
                 case "history":
                     for (int i = 0; i < History.Count; i++)
                         Console.WriteLine($"{i + 1,4}  {History[i]}");
@@ -286,6 +290,7 @@ namespace RemedyShellv1
             Console.WriteLine("Built-in commands:");
             Console.WriteLine("  cd [dir]     change directory (no arg = home)");
             Console.WriteLine("  pwd          print current directory");
+            Console.WriteLine("  ls [dir]     list files in current or given directory");
             Console.WriteLine("  history      show command history");
             Console.WriteLine("  clear/cls    clear the screen");
             Console.WriteLine("  encrypt <f>  encrypt a file with a password");
